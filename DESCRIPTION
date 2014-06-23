@@ -1,0 +1,8 @@
+Package: vcf4r
+Title: some tools to handle VCF files
+Version: 0.0.1
+Author: Jonas S Almeida
+Maintainer: Jonas S Almeida <jalmeida@mathbiol.org>
+Description: first attempt to create a package, using a simple VCF parser
+License: freeForAll
+
