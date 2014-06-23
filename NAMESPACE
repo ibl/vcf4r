@@ -1,1 +1,1 @@
-/R/vcf4r.R
+exportPattern("^[[:alpha:]]+")
