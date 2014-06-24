@@ -1,4 +1,4 @@
-#' converts a VCF text file into an R structure with a $head and a $body
+#' converts a VCF text file into an R structure with a head and a body
 #' @param fname is the file name
 #' @seealso \code{\link{r2vcf}} does the opposite
 vcf2r <- function(fname){
@@ -39,7 +39,31 @@ vcf2r <- function(fname){
 #' @param y is a list with a $head and a $body
 #' @param fname is the file name
 #' @seealso \code{\link{vcf2r}} does the opposite
-r2vcf <- function(y,fname){
-  # write the reverse conversion, of a vcf object back to a vcf text file
+r2vcf <- function(y,fname){ # write the reverse conversion, of a vcf list structure back to a vcf text file
+  # make sure this is a vcf list
+  if(is.null(y$head$fileformat)){
+    stop("sorry, this doesn't look like a VCF list")
+  }
+  # 1. Start by file format
+  fid = file(fname,"w") # opens file channel for writing
+  L = paste("##fileformat=",y$head$fileformat,sep="")
+  writeLines(L, con = fid, sep="\n")
+  # 2. Write the rest of the head
+  for(h in names(y$head)){
+    if((nchar(h)>0)&&(h!="fileformat")){
+      for(i in 1:length(y$head[h][[1]])){
+        L=paste("##",h,"=",y$head[h][[1]][i],sep="")
+        writeLines(L, con = fid, sep="\n")
+      }
+    }
+  }
+  # 3. write row headers of the body
+  L=paste("#",paste(colnames(y$body),collapse="\t"),sep="")
+  writeLines(L, con = fid, sep="\n")
+  for(i in 1:nrow(vcf$body)){
+    L=paste(as.vector(t(vcf$body[i,])),collapse="\t")
+    writeLines(L, con = fid, sep="\n")
+  }
+  close.connection(fid) # done writing
   x=y
 }
