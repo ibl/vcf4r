@@ -39,3 +39,8 @@ vcf2r <- function(fname){
   # Done, return y
   y
 }
+
+r2vcf <- function(y,fname){
+  # write the reverse conversion, of a vcf object back to a vcf text file
+  v
+}
