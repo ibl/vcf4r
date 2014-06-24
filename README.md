@@ -1,9 +1,9 @@
 vcf4r
 =====
 
-VCF tools for R
+VCF tools for R to assist with web-based integration of analysis of genomic data. The webApp (JavaScript) counterpart is being developed at [github.com/ibl/vcf](https://github.com/ibl/vcf).
 
-## Installation from GitHub
+### Installation from GitHub
 1. Make sure package <i>devtools</i> is installed and activated.
 2. Run <i>install_git("https://github.com/ibl/vcf4r.git")</i>.
 3. At this point, <i>vcf4r</i> will show in the list of packages. Note it will NOT respond to "Check for Updates": #2 will have to be run again to bring in a new version.
