@@ -1,6 +1,6 @@
 #' converts a VCF text file into an R structure with a $head and a $body
 #' @param fname is the file name
-#' @seealso \code{\Link{r2vcf}} which does the opposite
+#' @seealso \code{\link{r2vcf}} does the opposite
 vcf2r <- function(fname){
   fid = file(fname,"r") # opens file channel for reading
   y = list(head=list(c("fileformat")),body=data.frame());
@@ -38,7 +38,7 @@ vcf2r <- function(fname){
 #' converts a list structure created by vcf2r back onto a VCF text file
 #' @param y is a list with a $head and a $body
 #' @param fname is the file name
-#' @seealso \code{\Link{vcf2r}} which does the opposite
+#' @seealso \code{\link{vcf2r}} does the opposite
 r2vcf <- function(y,fname){
   # write the reverse conversion, of a vcf object back to a vcf text file
   x=y
