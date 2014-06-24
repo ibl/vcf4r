@@ -60,8 +60,8 @@ r2vcf <- function(y,fname){ # write the reverse conversion, of a vcf list struct
   # 3. write row headers of the body
   L=paste("#",paste(colnames(y$body),collapse="\t"),sep="")
   writeLines(L, con = fid, sep="\n")
-  for(i in 1:nrow(vcf$body)){
-    L=paste(as.vector(t(vcf$body[i,])),collapse="\t")
+  for(i in 1:nrow(y$body)){
+    L=paste(as.vector(t(y$body[i,])),collapse="\t")
     writeLines(L, con = fid, sep="\n")
   }
   close.connection(fid) # done writing
