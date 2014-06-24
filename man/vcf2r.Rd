@@ -12,6 +12,6 @@ vcf2r(fname)
 converts a VCF text file into an R structure with a $head and a $body
 }
 \seealso{
-\code{\link{r2vcf}} which does the opposite
+\code{\Link{r2vcf}} which does the opposite
 }
 

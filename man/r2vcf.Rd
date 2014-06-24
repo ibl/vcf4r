@@ -14,6 +14,6 @@ r2vcf(y, fname)
 converts a list structure created by vcf2r back onto a VCF text file
 }
 \seealso{
-\code{\link{vcf2r}} which does the opposite
+\code{\Link{vcf2r}} which does the opposite
 }
 
