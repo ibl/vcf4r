@@ -6,6 +6,9 @@
 # debugging with RStudio:
 # https://support.rstudio.com/hc/en-us/articles/200713843-Debugging-with-RStudio
 
+#' converts a VCF text file into an R structure with a $head and a $body
+#' @param fname is the file name
+#' @seealso \code{\link{r2vcf}} which does the opposite
 vcf2r <- function(fname){
   fid = file(fname,"r") # opens file channel for reading
   y = list(head=list(c("fileformat")),body=data.frame());
@@ -40,7 +43,11 @@ vcf2r <- function(fname){
   y
 }
 
+#' converts a list structure created by vcf2r back onto a VCF text file
+#' @param y is a list with a $head and a $body
+#' @param fname is the file name
+#' @seealso \code{\link{vcf2r}} which does the opposite
 r2vcf <- function(y,fname){
   # write the reverse conversion, of a vcf object back to a vcf text file
-  v
+  x=y
 }
