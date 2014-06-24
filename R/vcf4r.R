@@ -1,11 +1,3 @@
-# VCF4R parsing VCF by JSA
-# also a chance to learn a bit of R
-# http://cran.r-project.org/doc/manuals/R-intro.pdf
-# http://cran.r-project.org/doc/manuals/r-release/R-lang.html
-# quick introduction to dataypes: http://www.r-tutor.com/r-introduction
-# debugging with RStudio:
-# https://support.rstudio.com/hc/en-us/articles/200713843-Debugging-with-RStudio
-
 #' converts a VCF text file into an R structure with a $head and a $body
 #' @param fname is the file name
 #' @seealso \code{\link{r2vcf}} which does the opposite
