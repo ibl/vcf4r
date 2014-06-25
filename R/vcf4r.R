@@ -38,7 +38,7 @@ vcf2r <- function(fname){
 #' converts a list structure created by vcf2r back onto a VCF text file
 #' @param y is a list with a $head and a $body
 #' @param fname is the file name
-#' @seealso \code{\link{vcf2r}} does the opposite
+#' @seealso vcf2r does the opposite
 r2vcf <- function(y,fname){ # write the reverse conversion, of a vcf list structure back to a vcf text file
   # make sure this is a vcf list
   if(is.null(y$head$fileformat)){

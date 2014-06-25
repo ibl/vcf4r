@@ -1,7 +1,7 @@
 Package: vcf4r
 Type: Package
 Title: VCF for R
-Version: 0.2.3
+Version: 0.2.4
 Date: 2014-06-23
 Author: Jonas S Almeida
 Maintainer: Jonas S Almeida <jalmeida@mathbiol.org>
