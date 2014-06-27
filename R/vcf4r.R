@@ -67,3 +67,14 @@ r2vcf <- function(y,fname){ # write the reverse conversion, of a vcf list struct
   close.connection(fid) # done writing
   x=y
 }
+
+#' shortens a vcf structure created by vcf2r by sampling n lines
+#' @param vcf a named lst created by vcf2r
+#' @param n is teh number of lines
+#' @seealso vcf2r, whcih creates the vcf, and r2vcf which writes it back to a .vcf text file
+vcfn <- function(vcf,n=10){
+  # shorten $body file to consider only n random rows
+  vcf$body=vcf$body[sample(1:nrow(vcf$body),n),]
+  vcf
+}
+
