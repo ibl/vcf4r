@@ -30,7 +30,8 @@ vcf2r <- function(fname){
   # 3.1. Column headers await in L
   colNm = strsplit(substr(L,2,nchar(L)),"\t")
   # 3.2. Since all lines starting with "#" will be ignored by table.read, we can use it to read the data
-  y$body=read.table(fname,header=FALSE,col.names=colNm[[1]])
+  y$body=read.table(fname,header=FALSE)
+  colnames(y$body)<-colNm[[1]]  
   # Done, return y
   y
 }
